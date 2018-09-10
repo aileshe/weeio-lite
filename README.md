@@ -82,7 +82,7 @@ return array(
 #### 3.2 PATHINFO模式下url访问格式
 ##### 1) 如何通过URL访问模块下的控制器方法
 ```
-# 示例: 访问Home模块下Index控制器的index方法
+# 示例: 访问Home模块下Index控制器index方法
 
 http://127.0.0.1/home/index/index
                    |    |     └───── 方法名Action (首字母必须是小写)

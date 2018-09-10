@@ -34,7 +34,7 @@ Weeio-lite
     └─lib   # weeio-lite 核心类库
             Conf.php   # 配置读取载入类
             DI.php     # PHP-IOC(DI-依赖注入)类
-            Medoo.php  # 数据库操作引擎
+            Medoo.php  # 数据库操作引擎类
             Model.php  # 模型控制类
             Route.php  # 路由解析类
 

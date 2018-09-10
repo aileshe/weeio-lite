@@ -1,5 +1,5 @@
 # weeio-lite 是什么?
-Weeio-lite  简单、高效，一个超轻量级的PHP框架！
+Weeio-lite  简单、高效，一个超轻量级的PHP-MVC框架！
 
 ## 1.目录结构
 ```

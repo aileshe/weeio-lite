@@ -59,7 +59,9 @@ Weeio-lite
 │                  test2.html
 ```
 ## 3.路由
-
+> weeio-lite路由解析模式仅有两种: PATHINFO模式、普通模式 <br/>默认启用: PATHINFO模式
+### 3.1 PATHINFO模式
+### 3.2 普通模式
 ## 4.控制器
 ## 5.模型
 ## 6.视图

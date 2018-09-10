@@ -64,6 +64,6 @@ Weeio-lite
 ## 5.模型
 ## 6.视图
 ## 7.IOC容器(DI-依赖注入)
-## 8.weeio-lite 框架核心解剖
+## 8.weeio-lite 框架核心
 ## 9.框架扩展
 

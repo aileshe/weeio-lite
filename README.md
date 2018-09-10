@@ -61,6 +61,7 @@ Weeio-lite
 ## 3.路由
 > weeio-lite路由解析模式仅有两种: PATHINFO模式、普通模式 <br/>默认启用: PATHINFO模式
 #### 3.1 路由配置
+> 路由配置文件所在路径:  /weeio/config/route.php
 ```
 <?php
 
@@ -79,9 +80,8 @@ return array(
 );
 ```
 #### 3.2 PATHINFO模式下url访问格式
+##### 1) 访问Home模块下Index控制器的index方法
 ```
-1) 访问Home模块下的Index控制器, 默认方法index
-        等同于↓   
 http://127.0.0.1/home/index/index
                    |    |     └───── 方法名Action (首字母必须是小写)
                    |    └───── 控制器名Controller (首字母可大小写)
@@ -92,6 +92,14 @@ http://127.0.0.1/Home/Index/index
                    |    └───── 控制器名Controller (首字母可大小写)
                    └───── 模块名Module (首字母可大小写)
         等同于↓ 
+http://127.0.0.1/index/index
+                   |    └───── 方法名Action (首字母必须是小写), 没有指定"模块名"会自动调用配置文件中定义的默认模块
+                   └───── 控制器名Controller (首字母可大小写)
+        等同于↓
+http://127.0.0.1/Index/index
+                   |    └───── 方法名Action (首字母必须是小写), 没有指定"模块名"会自动调用配置文件中定义的默认模块
+                   └───── 控制器名Controller (首字母可大小写)
+        等同于↓ 
 http://127.0.0.1/home/index
                   |    └───── 控制器名Controller (首字母可大小写), 没有指定"方法名Action"会自动调用路由配置文件中定义的默认方法
                   └───── 模块名Module (首字母可大小写)
@@ -99,6 +107,12 @@ http://127.0.0.1/home/index
 http://127.0.0.1/Home/Index
                   |    └───── 控制器名Controller (首字母可大小写), 没有指定"方法名Action"会自动调用路由配置文件中定义的默认方法
                   └───── 模块名Module (首字母可大小写)
+        等同于↓ 
+http://127.0.0.1/index
+                   └───── 控制器名Controller (首字母可大小写), 没有指定"模块名Module、方法名Action名"会自动调用路由配置文件中定义默认的
+        等同于↓   
+http://127.0.0.1/Index
+                   └───── 控制器名Controller (首字母可大小写), 没有指定"模块名Module、方法名Action名"会自动调用路由配置文件中定义默认的
         等同于↓
 http://127.0.0.1/Home
                    └───── 模块名Module (首字母可大小写), 没有指定"控制器名Controller"会自动调用路由配置文件中定义的默认控制器, 没指定方法同理
@@ -108,6 +122,10 @@ http://127.0.0.1/home
         等同于↓
 http://127.0.0.1/
           └───── 模块名Module、控制器名Controller、方法名Action 都不填也可以, 都会自动调用配置定义默认的
+```
+##### 2) URL怎么传参?
+```
+
 ```
 #### 3.3 普通模式下url访问格式
 ```

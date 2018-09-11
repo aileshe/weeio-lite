@@ -157,11 +157,19 @@ http://127.0.0.1/?m=api&c=index&a=index
                   └───── 模块名Module (首字母可大小写)
         等同于↓
 http://127.0.0.1/
-           └───── 没有指定 "方法名Action"、"控制器名Controller"、"模块名Module" 路由解析器会自动选取配置文件中定义的默认值
+           └───── 没有指定 "方法名Action"、"控制器名Controller"、"模块名Module" 路由解析器会自动选取配置文件中定义默认的
 ```
 > (2) 如何通过URL传递参数?
 ```
+# 示例: 传递参数 id=28, name=dejan  给  Home模块下Index控制器的index方法
 
+http://127.0.0.1/?m=api&c=index&a=index&id=28&name=dejan
+                  |     |       └───── 方法名Action (首字母必须是小写)
+                  |     └───── 控制器名Controller (首字母可大小写)
+                  └───── 模块名Module (首字母可大小写)
+        等同于↓
+http://127.0.0.1/?id=28&name=dejan
+           └───── 没有指定 "方法名Action"、"控制器名Controller"、"模块名Module" 路由解析器会自动选取配置文件中定义默认的
 ```
 ## 4.控制器
 ## 5.模型

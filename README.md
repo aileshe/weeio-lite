@@ -331,8 +331,8 @@ class User extends \weeio\lib\Model
     }
 }
 ```
-#### 6.2 自定义模型和使用
-> weeio-lite框架集成了 Medoo数据库操作引擎, 关于Medoo详细使用文档请查阅 https://medoo.in/doc
+#### 6.2 自定义模型使用、数据库增删改查操作
+> weeio-lite框架模型类集成了 Medoo数据库操作引擎, 关于 "数据库增删改查操作" 详细使用文档请查阅: https://medoo.in/doc
 ```
 -- 模型类 User.php
 <?php
@@ -363,12 +363,8 @@ class Index
     }
 }
 ```
-#### 6.3 数据库增删改查
-
 ## 7. 视图 View
 #### 7.1 视图创建
-
-#### 7.1 视图与控制器间参数传值
 
 ## 8. IOC容器(DI-依赖注入)
 ## 9. 框架扩展

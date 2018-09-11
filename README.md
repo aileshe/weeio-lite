@@ -334,11 +334,13 @@ class User extends \weeio\lib\Model
 #### 6.2 自定义模型使用、数据库增删改查操作
 > weeio-lite框架模型类集成了 Medoo数据库操作引擎, 关于 "数据库增删改查操作" 详细使用请查阅文档: https://medoo.in/doc
 ```
+# 示例: 获取数据库中 User表的所有用户信息记录
+
 -- 模型类 User.php
 <?php
 namespace app\Api\Model;
 
-class User extends \weeio\lib\Model
+class User extends \weeio\lib\Model   # 自定义模型必须集成weeio-lite模型初始化类\weeio\lib\Model
 {
     public function get_all()
     {
@@ -355,11 +357,22 @@ namespace app\Api\Controller;
 
 class Index
 {
+    # 方法1:
     public function index()
     {
         # 使用自定义Model
         $model = new \app\Api\Model\User();
         echo json_encode($model->get_all());
+    }
+    # 方法2:
+    public function test()
+    {
+        # 通过 M()函数直接获得数据操作实例对象
+        $data = M()->select(
+            'user', # 数据库表名
+            '*'    # 查询字段
+        );
+        echo json_encode($data);
     }
 }
 ```

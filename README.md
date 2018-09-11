@@ -173,7 +173,7 @@ http://127.0.0.1/?id=28&name=dejan
 ```
 ## 4. 模块 Module
 #### 4.1 模块创建
-> (1)添加新模块很简单, 在app目录下创建 模块目录(命名首字母必须是大写), 同时也要添加新增模块名称到 "路由配置文件" 开放模块项中。如下添加3个模块示例: Api、Admin、Home
+> (1) 示例: 创建3个模块分别是: Api、Admin、Home   (注意:模块名首字母必须是大写的)
 ```
 ├─app  # 应用目录
 │  ├─Api    # 新建模块1
@@ -182,7 +182,7 @@ http://127.0.0.1/?id=28&name=dejan
 │
 └─weeio  # weeio-lite 框架核心目录
 ```
-> (2)修改 "路由配置文件" => /weeio/config/route.php
+> (2) 修改 "路由配置文件" => /weeio/config/route.php  分别把新创建的模块名称加入到开放模块配置项中
 ```
 # Weeio 路由配置
 
@@ -199,13 +199,44 @@ return array(
 #### 4.2 模块应用的场景和作用
 > 场景: 公司要做一个视频网站, 产品策划同事很快就设计好原型给到我们手上原型里有 网站前台、网站后台、移动端APP接口 ..  这时候想到的肯定是必须实现前后台网站分离、移动端API接口分离, 那该怎么做呢?
 
-这时候我们可以把 网站前台、网站后台、APP接口 看成独立的应用，即"模块Module"。然后划分成不同的"模块Module"来开发。
+这时候我们就可以把 网站前台、网站后台、APP接口 看成独立的应用，即"模块Module"。然后划分成不同的"模块Module"来开发。
 
 ## 5. 控制器 Controller
 #### 5.1 控制器创建
+> 示例: 在 Home 模块目录下创建3个控制器    (注意: 控制器文件命名首字母必须是大小的)
+```
+├─app  # 应用目录
+│  └─Home  # 模块2
+│      ├─Controller  # 控制器目录
+│      │      Index.php    # 控制器1: 网站首页
+│      │      Column.php   # 控制器2: 栏目页
+│      │      Article.php  # 控制器3: 文章页
 
+
+-- 控制器1:Index.php 文件内容
+class Index
+{
+    public function index(){...}
+}
+
+-- 控制器2:Column.php 文件内容
+class Column
+{
+    public function column(){...}
+}
+
+-- 控制器3:Article.php 文件内容
+class Article
+{
+    public function article(){...}
+}
+```
 #### 5.2 控制器内参数获取方式(GET、POST参数获取)
+```
 
+```
+#### 5.3 控制器方法中如何渲染视图
+#### 5.4 控制器方法如何给视图传递参数
 ## 6. 模型 Model
 #### 6.1 模型创建
 

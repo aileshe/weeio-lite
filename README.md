@@ -142,9 +142,9 @@ http://127.0.0.1/index/index/id/28/name/dejan
 ```
 # 示例: 以下链接是一个API接口, 出于安全和性能考虑并不需要在PATHINFO模式下解析, 通常都会以POST方式提交参数数据那么必须强制关闭PATHINFO方式解析, 这样效率会更高、速度更快！
 
-http://127.0.0.1/?pathinfo=off&m=home&c=index&a=index
+http://127.0.0.1/?pathinfo=off&m=api&c=index&a=index
            等同于↓
-http://127.0.0.1/?m=home&c=index&a=index&pathinfo=off
+http://127.0.0.1/?m=api&c=index&a=index&pathinfo=off
 ```
 #### 3.3 普通模式下url访问格式
 ```

@@ -58,7 +58,7 @@ Weeio-lite
 │                  test.html
 │                  test2.html
 ```
-## 3. 路由
+## 3. 路由 Route
 > weeio-lite路由解析模式仅有两种: PATHINFO模式、普通模式 <br/>默认启用: PATHINFO模式
 #### 3.1 路由文件配置
 > 路由配置文件所在路径:  /weeio/config/route.php
@@ -171,15 +171,15 @@ http://127.0.0.1/?m=api&c=index&a=index&id=28&name=dejan
 http://127.0.0.1/?id=28&name=dejan
            └───── 没有指定 "方法名Action"、"控制器名Controller"、"模块名Module" 路由解析器会自动选取配置文件中定义默认的
 ```
-## 4. 模块
-## 5. 控制器
+## 4. 模块 Module
+## 5. 控制器 Controller
 #### 4.1 控制器创建
 #### 4.2 控制器内参数获取方式(GET、POST参数获取)
-## 6. 模型
+## 6. 模型 Model
 #### 5.1 模型创建
 #### 5.2 自定义模型和使用
 #### 5.3 数据库增删改查
-## 7. 视图
+## 7. 视图 View
 #### 6.1 视图创建
 #### 6.1 视图与控制器间参数传值
 ## 8. IOC容器(DI-依赖注入)

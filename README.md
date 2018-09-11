@@ -332,7 +332,7 @@ class User extends \weeio\lib\Model
 }
 ```
 #### 6.2 自定义模型使用、数据库增删改查操作
-> weeio-lite框架模型类集成了 Medoo数据库操作引擎, 关于 "数据库增删改查操作" 详细使用文档请查阅: https://medoo.in/doc
+> weeio-lite框架模型类集成了 Medoo数据库操作引擎, 关于"数据库增删改查操作"详细使用文档请查阅 https://medoo.in/doc
 ```
 -- 模型类 User.php
 <?php

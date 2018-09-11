@@ -231,11 +231,41 @@ class Article
     public function article(){...}
 }
 ```
-#### 5.2 控制器内参数获取方式(GET、POST参数获取)
+#### 5.2 控制器中如何获取GET、POST参数
 ```
+# 方式1 :
+/**
+ * @param  $id    框架底层自动会提取返回相应的 $_POST['id'] 或 $_GET['id'] 值
+ * @param  $name  框架底层自动会提取返回相应的 $_POST['name'] 或 $_GET['name'] 值
+ */
+public function test($id, $name = '未知')  # 该方式会自动选取$_POST或$_GET对应参数值, 如果$_POST或$_GET不一定提交某参数你还可以给他初始化
+{
+    echo "ID:{$id}, name:{$name}";
+}
+或  等同于↑
+public function test($name = '未知', $id)  # 该方式自动选取$_POST或$_GET对应参数值是不分先后顺序的, 很高大上!
+{
+    echo "ID:{$id}, name:{$name}";
+}
+
+# 方式2 :
+public function test()
+{
+    if(isset($_GET['id']) && isset($_GET['name']))
+    {
+        echo "ID:{$_GET['id']}, name:{$_GET['name']}";
+    }
+    else
+    {
+        echo "ID:{$_POST['id']}, name:{$_POST['name']}";
+    }
+}
 
 ```
 #### 5.3 控制器方法中如何渲染视图
+```
+
+```
 #### 5.4 控制器方法如何给视图传递参数
 #### 5.5 控制器什么情况下需要继承weeio核心类
 

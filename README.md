@@ -302,7 +302,7 @@ class Index extends \weeio\weeio      # 调用到 $this->display()、$this->assi
 }
 ```
 #### 5.5 控制器什么情况下需要继承weeio核心类
-> 如果调用到 $this->display()、$this->assign($data) 方法、$_Di实例对象, 该控制器必须继承weeio核心类
+> 凡是调用到 $this->display()、$this->assign($data) 方法、$_Di实例对象, 控制器类必须继承weeio核心类。
 ## 6. 模型 Model
 #### 6.1 模型创建
 

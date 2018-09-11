@@ -146,8 +146,22 @@ http://127.0.0.1/?pathinfo=off&m=api&c=index&a=index
            等同于↓
 http://127.0.0.1/?m=api&c=index&a=index&pathinfo=off
 ```
-#### 3.3 普通模式下url访问格式
+#### 3.3 普通模式下的URL格式
+> (1) 如何通过URL访问模块下的控制器方法?
 ```
+# 示例: 访问Home模块下Index控制器index方法
+
+http://127.0.0.1/?m=api&c=index&a=index
+                  |     |       └───── 方法名Action (首字母必须是小写)
+                  |     └───── 控制器名Controller (首字母可大小写)
+                  └───── 模块名Module (首字母可大小写)
+        等同于↓
+http://127.0.0.1/
+           └───── 没有指定 "方法名Action"、"控制器名Controller"、"模块名Module" 路由解析器会自动选取配置文件中定义的默认值
+```
+> (2) 如何通过URL传递参数?
+```
+
 ```
 ## 4.控制器
 ## 5.模型

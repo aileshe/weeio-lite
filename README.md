@@ -302,12 +302,67 @@ class Index extends \weeio\weeio      # 调用到 $this->display()、$this->assi
 }
 ```
 #### 5.5 控制器什么情况下需要继承weeio核心类
-> 凡是调用到 $this->display()、$this->assign($data) 方法、$_Di实例对象, 控制器类必须继承weeio核心类。
+> 如果控制器方法调用到 $this->display()、$this->assign($data) 方法、$_Di实例对象, 控制器类必须继承weeio核心类。
 ## 6. 模型 Model
 #### 6.1 模型创建
+> 示例: 在Api模块下创建一个用户模型
+```
+├─app  # 应用目录
+│  ├─Api  # 模块目录
+│  │  └─Model  # 模型目录
+│  │          User.php  # 模型类文件
 
+-- 模型类:User.php  文件内容
+<?php
+namespace app\Api\Model;
+
+class User extends \weeio\lib\Model
+{
+    /**
+     * 获取所有用户
+     */
+    public function get_all()
+    {
+        //var_dump(self::$_db); # 打印数据库操作实例对象
+        return self::$_db->select(
+            'user', # 数据库表名
+            '*'     # 查询字段
+        );
+    }
+}
+```
 #### 6.2 自定义模型和使用
+> weeio-lite框架集成了 Medoo数据库操作引擎, 关于Medoo详细使用文档请查阅 https://medoo.in/doc
+```
+-- 模型类 User.php
+<?php
+namespace app\Api\Model;
 
+class User extends \weeio\lib\Model
+{
+    public function get_all()
+    {
+        return self::$_db->select(
+            'user', # 数据库表名
+            '*'     # 查询字段
+        );
+    }
+}
+
+-- 控制器: Index.php
+<?php
+namespace app\Api\Controller;
+
+class Index
+{
+    public function index()
+    {
+        # 使用自定义Model
+        $model = new \app\Api\Model\User();
+        echo json_encode($model->get_all());
+    }
+}
+```
 #### 6.3 数据库增删改查
 
 ## 7. 视图 View

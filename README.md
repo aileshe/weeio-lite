@@ -182,9 +182,19 @@ http://127.0.0.1/?id=28&name=dejan
 │
 └─weeio  # weeio-lite 框架核心目录
 ```
-> "路由配置文件" 修改
+> 修改 "路由配置文件" => /weeio/config/route.php
 ```
+# Weeio 路由配置
 
+return array(
+    ...
+
+    'OPEN_MODULE' => [       # 开放模块  (注意: 新增的模块必须把模块名添加到该数组中)
+        'Api'   => true,     # '模块名' => true
+        'Admin' => true,
+        'Home'  => true,
+    ]
+);
 ```
 #### 4.2 模块应用的场景和作用
 

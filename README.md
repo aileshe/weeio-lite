@@ -370,7 +370,7 @@ class Index
         # 通过 M()函数直接获得数据操作实例对象
         $data = M()->select(
             'user', # 数据库表名
-            '*'    # 查询字段
+            '*'     # 查询字段
         );
         echo json_encode($data);
     }

@@ -79,8 +79,8 @@ return array(
     ]
 );
 ```
-#### 3.2 PATHINFO模式下url访问格式
-> (1) 如何通过URL访问模块下的控制器方法
+#### 3.2 PATHINFO模式下的URL格式
+> (1) 如何通过URL访问模块下的控制器方法?
 ```
 # 示例: 访问Home模块下Index控制器index方法
 
@@ -125,7 +125,7 @@ http://127.0.0.1/home
 http://127.0.0.1/
           └───── 模块名Module、控制器名Controller、方法名Action 都不填也可以, 都会自动调用配置定义默认的
 ```
-> (2) 如何通过URL传递参数
+> (2) 如何通过URL传递参数?
 ```
 # 示例: 传递参数 id=28, name=dejan  给  Home模块下Index控制器的index方法
 
@@ -138,7 +138,7 @@ http://127.0.0.1/index/index/id/28/name/dejan
                    |    └───── 方法名Action (首字母必须是小写)
                    └───── 控制器名Controller (首字母可大小写)
 ```
-> (3) 如何在PATHINFO模式下强制使用普通"?"号传参模式
+> (3) 如何在PATHINFO模式下强制使用普通"?"号传参模式?
 ```
 # 示例: 以下链接是一个API接口, 出于安全和性能考虑并不需要在PATHINFO模式下解析, 通常都会以POST方式提交参数数据那么必须强制关闭PATHINFO方式解析, 这样效率会更高、速度更快！
 

@@ -16,6 +16,8 @@ class Route
     public $_pathinfo = array(
         'PATHINFO' => true, # 默认启用 PATHINFO模式, 如果只想用普通?号传参模式 改 false
 
+        'URI_DELIMIT' => '/',    # url参数分隔符一般是'/' 或 '-' , 如: /Index/index/id/28  或 /Index-index-id-28
+
         'MODULE' => 'Home',      # 默认访问模块
         'CONTROLLER' => 'Index', # 默认控制器
         'ACTION' => 'index',     # 默认方法
@@ -47,7 +49,7 @@ class Route
 
         if ($this->_pathinfo['PATHINFO']) {
             # 解析类型1: PATHINFO 模式 示例: xxx.com/index/index/id/28
-            $request_uri_array = explode('/', trim($_SERVER['REQUEST_URI'], '/'));
+            $request_uri_array = explode($this->_pathinfo['URI_DELIMIT'], trim($_SERVER['REQUEST_URI'], '/'));
             if (!empty($request_uri_array) && !empty($request_uri_array[0])) {
                 $request_uri_array[0] = ucfirst($request_uri_array[0]); # 访问模块名 和 控制器名 首字母必须是大写的, 所有这里自动转换
                 if (isset($this->_pathinfo['OPEN_MODULE'][$request_uri_array[0]])) {

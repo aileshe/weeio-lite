@@ -12,6 +12,8 @@
 return array(
     'PATHINFO' => true, # 默认启用 PATHINFO模式, 如果只想用普通?号传参模式 改 false
 
+    'URI_DELIMIT' => '/',    # url参数分隔符一般是'/' 或 '-' , 如: /Index/index/id/28  或 /Index-index-id-28
+
     'MODULE' => 'Home',      # 默认访问模块
     'CONTROLLER' => 'Index', # 默认控制器
     'ACTION' => 'index',     # 默认方法

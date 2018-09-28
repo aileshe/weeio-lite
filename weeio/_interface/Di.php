@@ -6,7 +6,7 @@
  * Licensed ( http://www.apache.org/licenses/LICENSE-2.0 )
  * Author: Dejan.He <673008865@qq.com>
  */
-namespace weeio\_Interface;
+namespace weeio\_interface;
 
 # Di依赖注入标准接口
 interface Di

@@ -48,7 +48,7 @@ class DI
         if (is_object(($instance = call_user_func($instance))) && !isset(self::$_sharedContainer[$name])) {
             self::$_sharedContainer[$name] = $instance;
             # 定义 DiAwareInterface 接口，自动注入 Di
-            if ($instance instanceof \weeio\_Interface\Di) {
+            if ($instance instanceof \weeio\_interface\Di) {
                 $instance->setDI(self::$_Di);
             }
             return true;
@@ -68,7 +68,7 @@ class DI
         if (is_object(($instance = call_user_func($instance))) && !isset(self::$_container[$name])) {
             self::$_container[$name] = $instance;
             # 定义 DiAwareInterface 接口，自动注入 Di
-            if ($instance instanceof \weeio\_Interface\Di) {
+            if ($instance instanceof \weeio\_interface\Di) {
                 $instance->setDI(self::$_Di);
             }
             return true;

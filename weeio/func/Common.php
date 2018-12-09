@@ -17,9 +17,9 @@
 function C($key, $file = null)
 {
     if ($file) {
-        return \weeio\lib\conf::get($key, $file); # 单个配置读取
+        return \weeio\lib\Conf::get($key, $file); # 单个配置读取
     } else {
-        return \weeio\lib\conf::all($key); # 整个配置文件读取
+        return \weeio\lib\Conf::all($key); # 整个配置文件读取
     }
 }
 
@@ -32,7 +32,7 @@ function M($dbname = null)
 {
     if ($dbname) {
         $di = \weeio\weeio::$_Di;
-        $db_conf = \weeio\lib\conf::all('/weeio/config/database');
+        $db_conf = \weeio\lib\Conf::all('/weeio/config/database');
         $db_conf['database_name'] = $dbname; # 切换数据库
         $di::_set('\weeio\lib\Medoo', function () use ($db_conf) {
             return new \weeio\lib\Medoo($db_conf);
@@ -40,7 +40,7 @@ function M($dbname = null)
         return $di::_get('\weeio\lib\Medoo');
     }
     $di = \weeio\weeio::$_Di;
-    $db_conf = \weeio\lib\conf::all('/weeio/config/database');
+    $db_conf = \weeio\lib\Conf::all('/weeio/config/database');
     $di::set('\weeio\lib\Medoo', function () use ($db_conf) {
         return new \weeio\lib\Medoo($db_conf);
     });

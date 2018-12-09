@@ -15,7 +15,7 @@ class Index extends \weeio\weeio
     # 普通模式访问 URL: http://127.0.0.1/ 或 http://127.0.0.1/?m=home 或 http://127.0.0.1/?c=index
     public function index()
     {
-        $route_conf = \weeio\lib\conf::all('/weeio/config/route'); # weeio 路由配置读取
+        $route_conf = \weeio\lib\Conf::all('/weeio/config/route'); # weeio 路由配置读取
         print_r(\weeio\weeio::$classMap); # weeio框架底层所有 include 文件列表
         print_r(\weeio\weeio::$_Di->get('\weeio\lib\Route')); # weeio底层使用了IOC(ID-依赖注入)在任意地方都可以查看容器实例列表
 

@@ -18,7 +18,7 @@ class Model
     public function __construct()
     {
         $di = \weeio\weeio::$_Di;
-        $db_conf = \weeio\lib\conf::all('/weeio/config/database');
+        $db_conf = \weeio\lib\Conf::all('/weeio/config/database');
         $di::set('\weeio\lib\Medoo', function () use ($db_conf) {
             return new \weeio\lib\Medoo($db_conf);
         });

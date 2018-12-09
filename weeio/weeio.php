@@ -80,7 +80,7 @@ class weeio{
         self::$_Di = \weeio\lib\DI::Di();
 
         # 初始化路由
-        $route_conf = \weeio\lib\conf::all('/weeio/config/route');
+        $route_conf = \weeio\lib\Conf::all('/weeio/config/route');
         self::$_Di->set('\weeio\lib\Route',function()use($route_conf){
             return new \weeio\lib\Route($route_conf);
         });

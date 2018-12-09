@@ -11,7 +11,7 @@
 
 namespace weeio\lib;
 
-class conf
+class Conf
 {
     static public $conf = []; # 缓存配置列表
 
